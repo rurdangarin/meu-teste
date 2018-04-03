@@ -1,0 +1,86 @@
+Instalando o GIT
+========================================
+git version
+sudo apt-get install git
+---testa a instalacao
+git version 
+git config --global --list
+git config --global user.name "Seu nome"
+git config --global user.email "Seu email"
+
+sudo apt-get update
+sudo apt-get install curl
+------ ajuste do prompt do git
+curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+cd ~
+nano .bashrc
+// adicionar as tres linhas abaixo no arquivo acima:
+	. ~/git-prompt.sh
+	export GIT_PS1_SHOWDIRTYSTATE=1
+	export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+//Salvar or arquivo .bashrc
+Fechar o terminal
+
+------- criar um repositorio do zero
+------- A partir do diretorio corrente 
+mkdir git-repos-home
+ls
+pwd
+cd git-repos-home
+------- criando um repositorio vazio
+mkdir blank-repo
+cd blank-repo
+-------------- inicializando o repositorio vazio
+git init
+---------------- Realizando o check-in do arquivo
+git status
+touch leiame.txt
+git add leiame.txt
+git status
+git commit -m "check-in do arquivo de testes!" 
+==============================================================
+- Alterar o leiame.txt
+--------------------------------------------------------------
+nano leiame.txt
+// altera o conteudo do arquivo
+// salva as alterações
+git status
+git diff HEAD
+git commit -a -m "Adicionei alterações no arquivo de teste"
+git log
+git show ####numero######
+
+==============================================================
+- Uso de Branches
+--------------------------------------------------------------
+git branch novoBranch
+git branch
+git checkout novoBranch
+git branch
+git checkout -b 'teste_branch'
+git branch
+gedit arquivoTeste
+git add arquivoTeste
+git commit -m "Este é um novo arquivo de teste"
+git status
+ls
+git branch
+git checkout master
+git branch
+ls
+git merge testing
+ls
+git branch
+git branch -d teste_branch
+git branch
+ls
+
+================================================================
+----------------------------------------------------------------
+git clone git@git.com:usuario/hello-world.git
+git remote -v
+push
+git config --global push default simple
+git remote add origin git@github.com:rurdangarin/hello-world.git
+git push git@github.com:usuarui/hello-world.git

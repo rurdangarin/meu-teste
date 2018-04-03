@@ -1,0 +1,71 @@
+﻿==============================================================
+- Configuração do Ambiente GIT
+--------------------------------------------------------------
+-- P01
+//instalar o GIT
+sudo apt-get install git
+
+git help -a
+git help -init
+git config --global --list // se não existir rodar o camando abaixo
+touch ~/.gitconfig
+
+git config --global user.name "Seu nome"
+git config --global user.email "Seu email"
+
+nano ~/.gitconfig
+cat ~/.gitconfig
+
+
+// cria uma pasta de trabalho em branco
+mkdir proj_branco //meu projeto em branco
+cd proj_branco    //meu projeto em branco
+git status
+//inicializando um novo ambiente do GIT
+git init 
+// cria um arquivo de teste
+touch leiame.txt
+nano leiame.txt
+// salvar o arquivo com o conteúdo desejado.
+git status
+// comando que envia para a área de staging
+git add "nome do arquivo.xyz" // adiciona o arquivo na área de staging
+git commit -m "comentários que são importantes" // envia para o repositório local
+//Alterar o leiame.txt
+nano leiame.txt
+git status
+git diff leiame.txt
+git commit -a -m "Adicionadas alterações no arquivo!!!"
+git log --stat
+git show ####
+
+
+==============================================================
+- Uso de Branches
+--------------------------------------------------------------
+-- P02
+
+git branch novoBranch
+git branch
+git checkout novoBranch
+git branch
+git checkout -b 'teste_branch'
+git branch
+gedit arquivoTeste
+git add arquivoTeste
+git commit -m "Este é um novo arquivo de teste"
+git status
+ls
+git branch
+git checkout master
+git branch
+ls
+git merge testing
+ls
+git branch
+git branch -d teste_branch
+git branch
+ls
+
+================================================================
+----------------------------------------------------------------

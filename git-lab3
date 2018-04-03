@@ -1,0 +1,108 @@
+git config --list
+mkdir meu_git_projeto
+cd meu_git_projeto
+git init
+git status
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+// verificar a presença da pasta ".git"
+ls -al
+// criar tres arquivos
+touch my_file
+touch my_file2
+touch my_file3
+git status
+git add my_file my_file2 my_file3
+git status
+git commit -m "Primeiro commit"
+// Realizar alterações nos arquivos.
+nano my_file
+nano my_file3
+git diff
+git add my_file my_file3
+git status
+git commit -m "Realizadas alterações nos arquivos"
+git log
+git show b6bd481
+// ignorando arquivos para não serem adicionados 
+//ao repositorio
+echo "teste" > b.exe
+// criar o arquivo que faz o git ignorar alguns arquivos
+touch .gitignore
+// editar o arquivo .gitignore e adicionar as linhas abaixo:
+
+.gitignore
+configuration/
+teste.m
+*.exe
+=================================================
+// revertendo um arquivo no workflow 
+nano my_file 
+git status
+git checkout -- my_file.txt
+git status
+// revertendo agora o arquivo do staging
+// Isso serve para arquivos que foram adicionados com o
+//comando "add"
+nano my_file
+// adicionar o arquivo no staging
+git add my_file
+git status 
+// revertendo do staging
+git reset HEAD teste.txt
+// revertendo para o working space
+git checkout teste.txt
+=================================================
+// Limpando um repositorio
+cd git-repos-home
+git init teste-repo
+nano teste.txt
+git status
+git add teste.txt
+git rm --cached teste.txt
+git status
+rm teste.txt
+git status
+=================================================
+// Verificando o log
+git log --online
+git log -n 3
+git log --oneline -n 3
+// Historico de um arquivo em particular
+git log my_test
+================================================
+// uso de branches
+git branch login-feature-branch
+git branch
+git checkout login-feature-branch
+git branch
+git log --oneline
+nano branch-demo-file
+git add branch-demo-file
+git commit -m "1st commit in the new feature branch"
+git log --oneline
+git branch
+git checkout master
+git branch
+git log --oneline
+// não se consegue ver as alterações, pois são do outro branch e não do master branch
+git log --oneline --decorate
+git merge login-feature-branch
+git log --oneline --decorate
+ls
+git branch -d login-feature-branch
+git log --oneline --decorate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
